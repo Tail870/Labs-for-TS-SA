@@ -15,7 +15,7 @@ namespace Lab2_Swarm_Particles_Algorithm
             this.X = x;
         }
 
-        public void nextIterationMax(double globalMaxSpeed, double minValue, double maxValue, int numOfFormula)
+        public void NextIterationMax(double globalMaxSpeed, double minValue, double maxValue, int numOfFormula)
         {
             Random rand = new Random();
             double C = 1; //Сигма

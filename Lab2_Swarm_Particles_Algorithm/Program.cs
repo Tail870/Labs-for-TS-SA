@@ -12,35 +12,35 @@ namespace Lab2_Swarm_Particles_Algorithm
             double minValue = -500, maxValue = 500;
             Swarm swarm = new Swarm(swarmSize, minValue, maxValue);
             int numOfFormula = 0;
-            calculateSwarmAlgorithm(swarm, numOfFormula);
+            Calculate(swarm, numOfFormula);
             minValue = -1; maxValue = 0;
             Swarm swarm2 = new Swarm(swarmSize, minValue, maxValue);
             numOfFormula = 1;
-            calculateSwarmAlgorithm(swarm2, numOfFormula);
+            Calculate(swarm2, numOfFormula);
             minValue = -500; maxValue = 500;
             Swarm swarm3 = new Swarm(swarmSize, minValue, maxValue);
             numOfFormula = 2;
-            calculateSwarmAlgorithm(swarm3, numOfFormula);
+            Calculate(swarm3, numOfFormula);
             minValue = -500; maxValue = 500;
             Swarm swarm4 = new Swarm(swarmSize, minValue, maxValue);
             numOfFormula = 3;
-            calculateSwarmAlgorithm(swarm4, numOfFormula);
+            Calculate(swarm4, numOfFormula);
             minValue = -500; maxValue = 600;
             Swarm swarm5 = new Swarm(swarmSize, minValue, maxValue);
             numOfFormula = 3;
-            calculateSwarmAlgorithm(swarm5, numOfFormula);
+            Calculate(swarm5, numOfFormula);
             Console.WriteLine("The END.");
             Console.ReadKey();
         }
 
-        private static void calculateSwarmAlgorithm(Swarm swarm, int numOfFormula)
+        private static void Calculate(Swarm swarm, int numOfFormula)
         {
-            swarm.calculateMax(numOfFormula);
+            swarm.CalcMax(numOfFormula);
             Console.WriteLine("\nАргумент при поиске максимума: " + swarm.GlobalMaxSpeed + "\n");
             Console.WriteLine("\nЗначение функции: " + Swarm.functionValue(swarm.GlobalMaxSpeed, numOfFormula) + "\n");
             swarm.clearParticles();
             Console.WriteLine("\n~~~~~~~~~~~~~\n");
-            swarm.calculateMin(numOfFormula);
+            swarm.CalcMin(numOfFormula);
             Console.WriteLine("\nАргумент при поиске минимум: " + swarm.GlobalMaxSpeed + "\n");
             Console.WriteLine("\nЗначение функции: " + Swarm.functionValue(swarm.GlobalMaxSpeed, numOfFormula) + "\n");
             swarm.clearParticles();

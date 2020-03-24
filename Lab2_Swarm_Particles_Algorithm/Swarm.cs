@@ -49,7 +49,7 @@ namespace Lab2_Swarm_Particles_Algorithm
             Particles = new List<Particle>();
         }
 
-        public double calculateMax(int numOfFormula)
+        public double CalcMax(int numOfFormula)
         {
             Random rand = new Random();
             for (int i = 0; i < SwarmSize; i++)
@@ -68,7 +68,7 @@ namespace Lab2_Swarm_Particles_Algorithm
             {
                 //Подсчитать скорость
                 foreach (Particle p in Particles)
-                    p.nextIterationMax(GlobalMaxSpeed, MinValue, MaxValue, numOfFormula);
+                    p.NextIterationMax(GlobalMaxSpeed, MinValue, MaxValue, numOfFormula);
                 foreach (Particle p in Particles)
                     if (Swarm.functionValue(p.LocalMaxSpeed, numOfFormula) > Swarm.functionValue(GlobalMaxSpeed, numOfFormula))
                     { GlobalMaxSpeed = p.LocalMaxSpeed; }
@@ -77,7 +77,7 @@ namespace Lab2_Swarm_Particles_Algorithm
             return GlobalMaxSpeed;
         }
 
-        public double calculateMin(int numOfFormula)
+        public double CalcMin(int numOfFormula)
         {
             Random rand = new Random();
             for (int i = 0; i < SwarmSize; i++)
