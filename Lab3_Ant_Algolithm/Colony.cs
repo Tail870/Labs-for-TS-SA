@@ -77,14 +77,14 @@ namespace Lab3_Ant_Algolithm
             showVertexesMatrix();
         }
 
-        public int simulateAnts()
+        public int SimulateColony()
         {
             int moving = 0;
             for (int antNum = 0; antNum < ants.Count; antNum++)
                 /* Убедиться, что муравью есть куда идти */
                 if (ants[antNum].TabuList.Count < vertexes.Count)
                 {
-                    int nextVertex = selectNextCity(antNum);
+                    int nextVertex = ChooseNextCity(antNum);
                     ants[antNum].addTabuEdge(edges[ants[antNum].CurVertex, nextVertex], nextVertex);
                     /* Обработка окончания путешествия (из последнего города в первый */
                     if (ants[antNum].TabuList.Count == vertexes.Count)
@@ -120,7 +120,7 @@ namespace Lab3_Ant_Algolithm
         public double antProduct(int from, int to)
         { return Math.Pow(edges[from, to].AmountOfPheromones, ALPHA) * Math.Pow(1.0 / edges[from, to].PathLength, BETA); }
 
-        public int selectNextCity(int ant)
+        public int ChooseNextCity(int ant)
         {
             int from, to;
             double denom = 0.0;
@@ -149,7 +149,7 @@ namespace Lab3_Ant_Algolithm
             return to;
         }
 
-        public void updateTrails()
+        public void UpdateTrails()
         {
             int from, to;
             /* Испарение фермента */

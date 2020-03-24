@@ -13,9 +13,9 @@ namespace Lab3_Ant_Algolithm
             //Один цикл времени будет равен amountOfVertex
             while (curTime++ < Colony.MAX_TIME * 2)
             {
-                if (Colony.simulateAnts() == 0)
+                if (Colony.SimulateColony() == 0)
                 {
-                    Colony.updateTrails();
+                    Colony.UpdateTrails();
                     if (curTime != Colony.MAX_TIME * 2)
                         Colony.restartAnts();
                     if (Colony.isBestChanged)
